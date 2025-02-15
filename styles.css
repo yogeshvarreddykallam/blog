@@ -1099,6 +1099,20 @@ img {
   bottom: 5rem;
 }
 
+.research__link,
+.project__link {
+    display: inline-block;
+    color: var(--first-color);
+    font-weight: var(--font-medium);
+    margin-top: 1rem;
+    text-decoration: underline;
+}
+
+.research__link:hover,
+.project__link:hover {
+    color: var(--first-color-alt);
+}
+
 /*========== SCROLL BAR ==========*/
 ::-webkit-scrollbar {
   width: .60rem;
