@@ -777,6 +777,44 @@
       <h2 class="section__title">Projects</h2>
       <span class="section__subtitle">My Independent Projects & Contributions</span>
       <div class="projects__container container grid">
+        <!-- Systems & Low-Level -->
+        <div class="project__data">
+          <h3 class="project__title">Virtual Memory Manager & Userspace Paging Engine</h3>
+          <p class="project__tech">C · Linux Systems Programming · POSIX Signals</p>
+          <p class="project__description">
+            Engineered a userspace Virtual Memory Manager to simulate OS-level demand paging on limited physical frames using C and Linux system APIs. Implemented advanced signal handling with <code>sigaction</code> and <code>SA_SIGINFO</code> to intercept <code>SIGSEGV</code>, extracting faulting addresses and access types (read/write) from <code>ucontext_t</code> register state. Developed multi-policy page replacement: FIFO (primary queue for baseline eviction) and Third Chance (Clock-with-Dirty-Bit) to reduce disk I/O by prioritizing clean pages. Integrated <code>mprotect()</code> to dynamically toggle <code>PROT_READ</code>, <code>PROT_WRITE</code>, and <code>PROT_NONE</code>, minimizing context switches and signal traps. Used GDB to inspect CPU registers (<code>REG_ERR</code>) and <code>siginfo_t</code> structures to resolve race conditions in the signal handler.
+          </p>
+        </div>
+        <div class="project__data">
+          <h3 class="project__title">Multithreaded OS Scheduler & Synchronization Engine</h3>
+          <p class="project__tech">C · Pthreads · Linux · GDB</p>
+          <p class="project__description">
+            Architected and implemented a custom thread scheduler in C using the Pthreads library, simulating a uniprocessor environment with independent I/O device management. Engineered core scheduling algorithms: FCFS and SRTF (preemptive Shortest Remaining Time First) with tie-breaking for deterministic execution, and a Multi-Level Feedback Queue (MLFQ) with 5 priority levels and dynamic time quanta (5ms–25ms) to balance interactive and batch workloads. Built a synchronization primitive library from scratch—thread-safe Counting Semaphores using <code>pthread_mutex</code> and <code>pthread_cond_variable</code>—to manage resource contention. Eliminated busy-waiting and spin-locks via a passive-wait architecture, ensuring minimal CPU usage during thread idle states.
+          </p>
+        </div>
+        <div class="project__data">
+          <h3 class="project__title">Custom Heap Allocator & Memory Management Library</h3>
+          <p class="project__tech">C · Linux · Memory Management</p>
+          <p class="project__description">
+            Developed a high-performance memory allocation library in C implementing Buddy Allocation and Slab Allocation on a custom-sized heap. Implemented buddy system logic with power-of-two partitioning and recursive buddy-merging to minimize external fragmentation. Designed a kernel-style slab allocator on top of the Buddy system using Slab Descriptor Tables for frequent small-object allocations. Engineered custom <code>my_malloc</code> and <code>my_free</code> APIs with packet-style metadata to track allocation sizes while returning user-aligned pointers.
+          </p>
+        </div>
+        <!-- AI & Data Science -->
+        <div class="project__data">
+          <h3 class="project__title">Masked Time-Series Transformers for Motion Forecasting</h3>
+          <p class="project__tech">Python · PyTorch · BERT · Self-Supervised Learning</p>
+          <p class="project__description">
+            Architected a BERT-style Transformer encoder to predict human motion from wrist IMU data, achieving a 25.5% reduction in Mean Absolute Error (MAE). Engineered a two-stage self-supervised learning pipeline: pre-training a 6-layer Transformer on 3,883 hours of unlabeled sensor data with masked patch modeling (15% masking) to learn motion physics, and fine-tuning on 2,562 hours of annotated data for simultaneous forecasting and Human Activity Recognition (HAR). Implemented multitask learning with a joint loss function to stabilize training and improve temporal coherence in 2-second motion forecasts. Achieved 72.6% overall accuracy across 6 activity classes, with high F1 for Sleep (0.91).
+          </p>
+        </div>
+        <div class="project__data">
+          <h3 class="project__title">Flight Delay Prediction using Fused Data</h3>
+          <p class="project__tech">Python · XGBoost · Scikit-learn · SQL</p>
+          <p class="project__description">
+            Engineered a data-driven pipeline to predict U.S. domestic flight delays by fusing 725,611 flight records with hourly meteorological data from NOAA. Developed a leakage-free temporal fusion using <code>pandas.merge_asof</code> so flights are matched only with weather observations prior to departure. Evaluated XGBoost, Random Forest, and Neural Networks; Random Forest achieved the best performance (R² ≈ 0.32). Applied feature engineering and cyclical encoding (sine/cosine) for temporal features to preserve 24-hour cycle continuity, and engineered TRAFFIC_COUNT proxies for runway saturation and airport congestion. Conducted scenario simulations showing a 3.2× delay multiplier under severe winter weather versus clear conditions.
+          </p>
+        </div>
+        <!-- Previous projects -->
         <div class="project__data">
           <h3 class="project__title">ModiCross: Two-Stage Document Ranking Using Cross-Encoder</h3>
           <p class="project__description">

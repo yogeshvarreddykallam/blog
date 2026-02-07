@@ -896,11 +896,25 @@ img {
 
 .project__title {
   font-size: var(--h2-font-size);
+  margin-bottom: var(--mb-0-5);
+}
+
+.project__tech {
+  font-size: var(--small-font-size);
+  color: var(--first-color);
+  font-weight: var(--font-medium);
   margin-bottom: var(--mb-0-75);
 }
 
 .project__description {
   margin-bottom: var(--mb-1-5);
+}
+
+.project__description code {
+  font-size: var(--smaller-font-size);
+  background-color: var(--input-color);
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
 }
 
 .project__title, .project__description {
@@ -1381,13 +1395,11 @@ img {
   }
 }
 
-/* Example dark mode selector, adjust to match your theme logic */
-body.dark-theme .projects__container,
-body.dark-theme .project__data {
-  background-color: var(--container-color-dark); /* or your dark bg color */
-}
-
 body.dark-theme .project__title,
 body.dark-theme .project__description {
-  color: var(--text-color-dark); /* or your dark text color */
+  color: var(--title-color);
+}
+
+body.dark-theme .project__description code {
+  background-color: var(--input-color);
 }
