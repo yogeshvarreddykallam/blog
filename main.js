@@ -97,8 +97,6 @@ if (themeButton) {
   });
 }
 
-<<<<<<< HEAD
-=======
 /* ==================== PROJECT FILTERS ==================== */
 const filterBtns = document.querySelectorAll('.filter__btn');
 const projectCards = document.querySelectorAll('.projects__grid .project');
@@ -120,7 +118,6 @@ filterBtns.forEach(btn => {
   });
 });
 
->>>>>>> 83d8d9a (Initial commit from local folder)
 /* ==================== FADE-IN ON SCROLL ==================== */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
