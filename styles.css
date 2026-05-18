@@ -463,8 +463,6 @@ h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
 .skills__chip:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ==================== PROJECTS ==================== */
-<<<<<<< HEAD
-=======
 .projects__filters {
   display: flex;
   flex-wrap: wrap;
@@ -497,7 +495,6 @@ h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
 
 .project.hidden { display: none; }
 
->>>>>>> 83d8d9a (Initial commit from local folder)
 .projects__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -658,8 +655,6 @@ h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
 .contact__value a { color: var(--accent); }
 .contact__value a:hover { text-decoration: underline; }
 
-<<<<<<< HEAD
-=======
 /* ==================== CLOSING PHOTO ==================== */
 .closing-photo {
   padding: 64px 0 0;
@@ -691,7 +686,6 @@ h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
   color: var(--accent);
 }
 
->>>>>>> 83d8d9a (Initial commit from local folder)
 /* ==================== FOOTER ==================== */
 .footer {
   border-top: 1px solid var(--border);
