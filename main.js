@@ -97,6 +97,30 @@ if (themeButton) {
   });
 }
 
+<<<<<<< HEAD
+=======
+/* ==================== PROJECT FILTERS ==================== */
+const filterBtns = document.querySelectorAll('.filter__btn');
+const projectCards = document.querySelectorAll('.projects__grid .project');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.dataset.filter;
+
+    filterBtns.forEach(b => b.classList.remove('filter__btn--active'));
+    btn.classList.add('filter__btn--active');
+
+    projectCards.forEach(card => {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+
+>>>>>>> 83d8d9a (Initial commit from local folder)
 /* ==================== FADE-IN ON SCROLL ==================== */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
